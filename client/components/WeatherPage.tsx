@@ -1,8 +1,14 @@
-export default function WeatherPage(){
+import WeatherKey from './WeatherKey'
+import WeatherForecast from './WeatherForecast'
 
-return(
-<>
-
-</>
-)
+export default function WeatherPage() {
+  return (
+    <>
+      <div>
+        <p>WeatherPage</p>
+        <WeatherKey />
+        <WeatherForecast />
+      </div>
+    </>
+  )
 }
