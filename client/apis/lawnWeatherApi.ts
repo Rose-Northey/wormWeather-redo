@@ -12,14 +12,25 @@ export async function getWormWeather() {
     return noonHours
   }
 
-  const weatherArr = []
   const soil0_1 = tidyArr(httpRequestObject.body.hourly.soil_moisture_0_to_1cm)
   const soil1_3 = tidyArr(httpRequestObject.body.hourly.soil_moisture_1_to_3cm)
   const soil3_9 = tidyArr(httpRequestObject.body.hourly.soil_moisture_3_to_9cm)
-  const soil9_27 = tidyArr(httpRequestObject.body.hourly.soil_moisture_9_to_27cm)
-  const soil27_81 = tidyArr(httpRequestObject.body.hourly.soil_moisture_27_to_81cm)
+  const soil9_27 = tidyArr(
+    httpRequestObject.body.hourly.soil_moisture_9_to_27cm,
+  )
+  const soil27_81 = tidyArr(
+    httpRequestObject.body.hourly.soil_moisture_27_to_81cm,
+  )
 
+  const weatherArr = [
+    { soil0_1 },
+    { soil1_3 },
+    { soil3_9 },
+    { soil9_27 },
+    { soil27_81 },
+  ]
 
+  console.log(weatherArr)
 
-  return httpRequestObject.body
+  return weatherArr
 }

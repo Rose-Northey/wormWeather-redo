@@ -1,13 +1,14 @@
-import {getWormWeather} from '../apis/lawnWeatherApi'
+import { Outlet } from 'react-router-dom'
 
 function App() {
  
-  getWormWeather()
+
+  
 
   return (
     <>
       <div className="app">
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
+      <Outlet />  
       </div>
     </>
   )
