@@ -3,7 +3,13 @@
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {
-  
+  return knex.schema
+  .createTable('lawns', function (table) {
+    table.increments('id');
+    table.string('name');
+    table.integer('lat');
+    table.integer('long');
+})
 };
 
 /**
