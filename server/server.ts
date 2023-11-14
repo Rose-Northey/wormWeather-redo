@@ -1,13 +1,12 @@
 import express from 'express'
 import * as Path from 'node:path'
+import soilWeather from './routes/soilWeather.ts' 
 
-import fruitRoutes from './routes/fruits.ts'
 
 const server = express()
 
 server.use(express.json())
 
-server.use('/api/v1/fruits', fruitRoutes)
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))
@@ -16,5 +15,7 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(Path.resolve('./dist/index.html'))
   })
 }
+
+server.use('/api/v1/soildata', soilWeather)
 
 export default server
